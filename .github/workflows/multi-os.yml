@@ -1,0 +1,37 @@
+name: Multi-OS
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: OS / hostname / user
+        run: |
+          echo "OS: $(uname -s)"
+          uname -a
+          hostname
+          whoami
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: OS / hostname / user
+        shell: pwsh
+        run: |
+          echo "OS: Windows"
+          $PSVersionTable.OS
+          echo $env:COMPUTERNAME
+          whoami
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - name: OS / hostname / user
+        run: |
+          sw_vers
+          hostname
+          whoami

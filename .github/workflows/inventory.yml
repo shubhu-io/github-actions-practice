@@ -1,0 +1,19 @@
+name: Runner Inventory
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tool versions
+        run: |
+          docker --version
+          python3 --version
+          node --version
+          git --version
+          echo "--- runner context ---"
+          echo "RUNNER_OS=$RUNNER_OS RUNNER_ARCH=$RUNNER_ARCH"
