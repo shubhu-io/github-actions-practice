@@ -14,3 +14,5 @@ fi
 
 echo "All checks passed"
 exit 0
+
+exit 1
