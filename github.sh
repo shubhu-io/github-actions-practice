@@ -13,6 +13,6 @@ if ! grep -q "MemTotal" /proc/meminfo; then
 fi
 
 echo "All checks passed"
-exit 0
+exit 1
 
 exit 1
